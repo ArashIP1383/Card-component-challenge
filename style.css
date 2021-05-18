@@ -2,7 +2,8 @@
     --cyan: hsl(185, 75%, 39%);
     --Verydarkblue: hsl(229, 23%, 23%);
     --Darkblue: hsl(227, 10%, 46%);
-    --sizename: 18px;
+    --dark-gray: hsl(0, 0%, 59%);
+    --sizename: 12px;
     --lwaight: 400;
     --hwaight: 700;
     --marginright: 50px;
@@ -41,7 +42,7 @@ body{
     display: grid;
     place-items: center;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 12px;
     box-shadow: 10px 0px 60px rgba(0, 0, 0, 0.26)  ;
 }
 
@@ -54,12 +55,13 @@ body{
     margin-top: -15%;
     border-radius: 50%;
     padding: 0;
-    border: 6px solid white;
+    border: 3px solid white;
 }
 
 .patterncard{
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    height: 130px;
 }
 
 .texts{
@@ -71,7 +73,8 @@ body{
 }
 
 .name{
-    font-size: var(--sizename);
+    margin-bottom: 2%;
+    font-size: calc(var(--sizename) + 4px);
     font-weight: var(--hwaight);
     margin-top: 7%;
     color: var(--Verydarkblue);
@@ -80,20 +83,26 @@ body{
 .name::after{
     content: '26';
     margin-left: 12px;
-    font-size: var(--sizename);
+    font-size: calc(var(--sizename) + 3px);
     font-weight: var(--lwaight);
-    color: var(--Darkblue);
+    color: var(--dark-gray);
 }
 
 .city{
     font-size: var(--sizename);
-    font-weight: var(--hwaight);
-    color: var(--Darkblue);
+    color: var(--dark-gray);
+    margin-top: 0;
 }
 
 .social-info{
     width: 100%;
     margin-bottom: 8%;
+}
+
+.social-info hr{
+    height: 1px;
+    background-color: hsl(0,5%,90%);
+    border-width: 0;
 }
 
 .social-info p {
@@ -105,11 +114,18 @@ body{
 }
 
 .social-info p:nth-child(2)::after,.social-info p:nth-child(3)::after, .social-info p:nth-child(4)::after {
-    font-weight: normal;
+    font-weight: var(--hwaight);
     color: var(--Darkblue);
-    font-size: 14px;
-    letter-spacing: 5px;
+    font-size: calc(var(--sizename) + 6px);
+    letter-spacing: 1px;
 }
+
+.social-info p::after,.social-info p::before{
+    font-size: calc(var(--sizename) - 2px) !important;
+    font-weight: var(--lwaight) !important;
+    color: var(--dark-gray) !important;
+}
+
 .social-info p:nth-child(2)::after{
     content: 'Followers';
 }
